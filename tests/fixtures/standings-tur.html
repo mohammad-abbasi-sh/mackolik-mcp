@@ -1,0 +1,151 @@
+
+<div class="standing">
+    <div class="standing-title" style="position: relative">
+        <div class="standing-title-coll" style="float: left" onmouseover="$('#dvBanner').html('')" onclick="$('#dvBanner').html('')">Puan Durumu</div>
+    </div>
+    <div id="dvBanner" style="position: absolute;"></div>
+    <div class="standing-menubar">
+        <a class="standing-menu selected" href="#;" league="Tur">Türkiye</a>
+        <a class="standing-menu " href="#;" league="Eng">İngiltere</a>
+        <a class="standing-menu " href="#;" league="Esp">İspanya</a>
+        <a class="standing-menu " href="#;" league="Ita">İtalya</a>
+        <a class="standing-menu " href="#;" league="Ger">Almanya</a>
+    </div>
+    <div class="standing-table">
+        <table border="0" cellspacing="0" cellpadding="2" class="standing-table list-table" width="100%" id="tblLightStanding">
+            <tr class="standing-header table-header">
+                <td width="30">Sıra</td>
+                <td width="151">Takım</td>
+                <td width="30" align="right">Oyn</td>
+                <td width="30" align="right">Puan</td>
+                <td width="30" align="right">Av</td>
+            </tr>
+            
+            <tr class="alt1" align="right">
+                <td align="center" style="padding-right: 2px">1</td>
+                <td style="padding-left: 2px" align="left">
+                    <a href="//arsiv.mackolik.com/Takim/1/Galatasaray" target="_blank">Galatasaray</a>
+                </td>
+                <td style="padding-right: 2px">10</td>
+                <td style="padding-right: 2px">25</td>
+                <td>11</td>
+            </tr>
+            
+            <tr class="alt2" align="right">
+                <td align="center" style="padding-right: 2px">2</td>
+                <td style="padding-left: 2px" align="left">
+                    <a href="//arsiv.mackolik.com/Takim/591/Amed-SK" target="_blank">Amed SK</a>
+                </td>
+                <td style="padding-right: 2px">10</td>
+                <td style="padding-right: 2px">23</td>
+                <td>14</td>
+            </tr>
+            
+            <tr class="alt1" align="right">
+                <td align="center" style="padding-right: 2px">3</td>
+                <td style="padding-left: 2px" align="left">
+                    <a href="//arsiv.mackolik.com/Takim/4/Trabzonspor" target="_blank">Trabzonspor</a>
+                </td>
+                <td style="padding-right: 2px">10</td>
+                <td style="padding-right: 2px">22</td>
+                <td>16</td>
+            </tr>
+            
+            <tr class="alt2" align="right">
+                <td align="center" style="padding-right: 2px">4</td>
+                <td style="padding-left: 2px" align="left">
+                    <a href="//arsiv.mackolik.com/Takim/656/Kasimpasa" target="_blank">Kasımpaşa</a>
+                </td>
+                <td style="padding-right: 2px">11</td>
+                <td style="padding-right: 2px">20</td>
+                <td>6</td>
+            </tr>
+            
+            <tr class="alt1" align="right">
+                <td align="center" style="padding-right: 2px">5</td>
+                <td style="padding-left: 2px" align="left">
+                    <a href="//arsiv.mackolik.com/Takim/3/Besiktas" target="_blank">Beşiktaş</a>
+                </td>
+                <td style="padding-right: 2px">10</td>
+                <td style="padding-right: 2px">19</td>
+                <td>8</td>
+            </tr>
+            
+            <tr class="alt2" align="right">
+                <td align="center" style="padding-right: 2px">6</td>
+                <td style="padding-left: 2px" align="left">
+                    <a href="//arsiv.mackolik.com/Takim/2/Fenerbahce" target="_blank">Fenerbahçe</a>
+                </td>
+                <td style="padding-right: 2px">10</td>
+                <td style="padding-right: 2px">16</td>
+                <td>14</td>
+            </tr>
+            
+            <tr class="alt1" align="right">
+                <td align="center" style="padding-right: 2px">7</td>
+                <td style="padding-left: 2px" align="left">
+                    <a href="//arsiv.mackolik.com/Takim/9665/Corum-FK" target="_blank">Çorum FK</a>
+                </td>
+                <td style="padding-right: 2px">10</td>
+                <td style="padding-right: 2px">16</td>
+                <td>5</td>
+            </tr>
+            
+            <tr class="alt2" align="right">
+                <td align="center" style="padding-right: 2px">8</td>
+                <td style="padding-left: 2px" align="left">
+                    <a href="//arsiv.mackolik.com/Takim/18/Kocaelispor" target="_blank">Kocaelispor</a>
+                </td>
+                <td style="padding-right: 2px">10</td>
+                <td style="padding-right: 2px">16</td>
+                <td>2</td>
+            </tr>
+            
+            <tr class="alt1" align="right">
+                <td align="center" style="padding-right: 2px">9</td>
+                <td style="padding-left: 2px" align="left">
+                    <a href="//arsiv.mackolik.com/Takim/15/Goztepe" target="_blank">Göztepe</a>
+                </td>
+                <td style="padding-right: 2px">10</td>
+                <td style="padding-right: 2px">15</td>
+                <td>4</td>
+            </tr>
+            
+        </table>
+        <div class="standing-detail-temp">
+            <a href="//arsiv.mackolik.com/Puan-Durumu/1/TURKIYE-Super-Lig" target="_blank">Detaylı puan durumu için<img src="//im.mackolik.com/img5/newsdetail-arrow.png"></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".standing-menubar a").click(function () {
+        var league = $(this).attr("league");
+        $.ajax({
+            url: "//arsiv.mackolik.com/Home/StandingHandler.aspx?league=" + league,
+            success: function (response) {
+                $("#dvStandingControl").html(response);
+            }
+        });
+    });
+    
+    function showBanner() {
+        
+        //14799
+    }
+    
+    var data = [[1,"Şampiyonlar Ligi",1,1,"1E365A"],[2,"Şampiyonlar Ligi Eleme",2,1,"0046C5"],[9,"Avrupa Ligi Eleme",3,1,"4F8DFF"],[60,"Konferans Ligi Eleme",4,1,"00CCFF"],[6,"Alt Lig",16,3,"F03B3B"]];
+    if ($("#tblLightStanding")[0]) {
+        for (var i = 0; i < data.length; i++) {
+            for (var j = 0; j < data[i][3]; j++) {
+                if ($("#tblLightStanding tr[class^=alt]")[j + data[i][2] - 1]) {
+                    var cell = $("#tblLightStanding tr[class^=alt]")[j + data[i][2] - 1].cells[0];
+                    cell.title = data[i][1];
+                    cell.style.backgroundColor = "#" + data[i][4];
+                    cell.style.fontWeight = "bold";
+                    cell.style.color = "#ffffff";
+                }
+            }
+        }
+    }
+</script>
