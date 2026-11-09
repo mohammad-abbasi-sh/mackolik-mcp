@@ -83,3 +83,7 @@ Offline tests run on recorded fixtures (real feed responses from 2026-11-07); li
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+Built by [Mohammad Abbasi](https://github.com/mohammad-abbasi-sh) — [Almanibama](https://almanibama.ir) · [mabbasi.ir](https://mabbasi.ir)
