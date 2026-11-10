@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mackolik-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "Unofficial read-only MCP server for mackolik.com live scores (live scores, results, fixtures, standings, match detail)"
 readme = "README.md"
 license = { text = "MIT" }
