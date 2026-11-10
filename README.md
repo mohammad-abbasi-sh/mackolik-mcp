@@ -15,7 +15,7 @@ Add to your MCP client config (stdio):
   "mcpServers": {
     "mackolik": {
       "command": "uvx",
-      "args": ["mackolik-mcp==0.1.0"]
+      "args": ["mackolik-mcp==0.1.1"]
     }
   }
 }
@@ -59,9 +59,9 @@ mackolik.com redirects to arsiv.mackolik.com (Akamai-fronted, no bot wall). The 
 ## Install
 
 ```bash
-uvx mackolik-mcp==0.1.0        # run directly (needs uv)
+uvx mackolik-mcp==0.1.1        # run directly (needs uv)
 # or
-pip install mackolik-mcp==0.1.0
+pip install mackolik-mcp==0.1.1
 mackolik-mcp    # starts the MCP server on stdio
 ```
 
