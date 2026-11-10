@@ -15,7 +15,7 @@ MCP istemci yapılandırmanıza ekleyin (stdio):
   "mcpServers": {
     "mackolik": {
       "command": "uvx",
-      "args": ["mackolik-mcp"]
+      "args": ["mackolik-mcp==0.1.0"]
     }
   }
 }
@@ -59,9 +59,9 @@ mackolik.com, arsiv.mackolik.com'a yönlendirir (Akamai ön yüzü, bot duvarı 
 ## Kurulum
 
 ```bash
-uvx mackolik-mcp        # doğrudan çalıştır (uv gerekir)
+uvx mackolik-mcp==0.1.0        # doğrudan çalıştır (uv gerekir)
 # veya
-pip install mackolik-mcp
+pip install mackolik-mcp==0.1.0
 mackolik-mcp    # MCP sunucusunu stdio üzerinde başlatır
 ```
 
