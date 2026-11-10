@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime, timezone
 
 from mcp.server.fastmcp import FastMCP
 
@@ -30,8 +31,24 @@ Built by Mohammad Abbasi (mohammad-abbasi-sh) — https://almanibama.ir · https
 """
 
 
+_SOURCE = "mackolik.com"
+_DISCLAIMER = "Unofficial read-only data from mackolik.com; verify on the site before acting on it."
+
+
+def _envelope() -> dict:
+    return {
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "source": _SOURCE,
+        "disclaimer": _DISCLAIMER,
+    }
+
+
+def _ok(payload: dict) -> str:
+    return json.dumps({**_envelope(), **payload}, ensure_ascii=False)
+
+
 def _err(e: Exception) -> str:
-    return json.dumps({"error": str(e)}, ensure_ascii=False)
+    return _ok({"error": str(e)})
 
 
 def _validate_limit(limit: int, lo: int = 1, hi: int = 50) -> int:
@@ -61,11 +78,8 @@ def mackolik_live_scores(league: str | None = None, limit: int = 20) -> str:
         live = _S.filter_matches(matches, status="live", league=league)
     except (ValueError, _http.MackolikError) as e:
         return _err(e)
-    return json.dumps(
-        {"count": min(limit, len(live)), "total_live": len(live),
-         "matches": live[:limit]},
-        ensure_ascii=False,
-    )
+    return _ok({"count": min(limit, len(live)), "total_live": len(live),
+         "matches": live[:limit]})
 
 
 @mcp.tool()
@@ -80,11 +94,8 @@ def mackolik_results(date: str | None = None, league: str | None = None,
         done = _S.filter_matches(matches, status="finished", league=league)
     except (ValueError, _http.MackolikError) as e:
         return _err(e)
-    return json.dumps(
-        {"date": date_tr, "count": min(limit, len(done)),
-         "total_finished": len(done), "matches": done[:limit]},
-        ensure_ascii=False,
-    )
+    return _ok({"date": date_tr, "count": min(limit, len(done)),
+         "total_finished": len(done), "matches": done[:limit]})
 
 
 @mcp.tool()
@@ -99,11 +110,8 @@ def mackolik_fixtures(date: str | None = None, league: str | None = None,
         upcoming = _S.filter_matches(matches, status="upcoming", league=league)
     except (ValueError, _http.MackolikError) as e:
         return _err(e)
-    return json.dumps(
-        {"date": date_tr, "count": min(limit, len(upcoming)),
-         "total_upcoming": len(upcoming), "matches": upcoming[:limit]},
-        ensure_ascii=False,
-    )
+    return _ok({"date": date_tr, "count": min(limit, len(upcoming)),
+         "total_upcoming": len(upcoming), "matches": upcoming[:limit]})
 
 
 @mcp.tool()
@@ -120,11 +128,8 @@ def mackolik_standings(league: str = "Tur") -> str:
         rows = _S.parse_standings(_http.fetch_standings(code))
     except (ValueError, _http.MackolikError) as e:
         return _err(e)
-    return json.dumps(
-        {"league": code, "league_name": _S.LEAGUES[code],
-         "count": len(rows), "standings": rows},
-        ensure_ascii=False,
-    )
+    return _ok({"league": code, "league_name": _S.LEAGUES[code],
+         "count": len(rows), "standings": rows})
 
 
 @mcp.tool()
@@ -145,7 +150,17 @@ def mackolik_match_detail(match_id: int, date: str | None = None) -> str:
             )
     except (ValueError, _http.MackolikError) as e:
         return _err(e)
-    return json.dumps({"date": date_tr, **row}, ensure_ascii=False)
+    return _ok({"date": date_tr, **row})
+
+
+@mcp.tool()
+def mackolik_health() -> str:
+    """Check whether mackolik.com is reachable right now.
+
+    Returns status ok (HTTP 200), blocked (HTTP 403/429 — bot wall or
+    rate limit) or error, plus the HTTP status and the probed URL.
+    One polite request; it does not fetch any listings."""
+    return _ok(_http.health_check())
 
 
 def main() -> None:
