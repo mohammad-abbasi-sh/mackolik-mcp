@@ -15,7 +15,7 @@ mcp-name: io.github.mohammad-abbasi-sh/mackolik-mcp
   "mcpServers": {
     "mackolik": {
       "command": "uvx",
-      "args": ["mackolik-mcp==0.1.0"]
+      "args": ["mackolik-mcp==0.1.1"]
     }
   }
 }
@@ -59,9 +59,9 @@ mackolik.com به arsiv.mackolik.com هدایت می‌شود (جلوِ Akamai،
 ## نصب
 
 ```bash
-uvx mackolik-mcp==0.1.0        # اجرای مستقیم (نیازمند uv)
+uvx mackolik-mcp==0.1.1        # اجرای مستقیم (نیازمند uv)
 # یا
-pip install mackolik-mcp==0.1.0
+pip install mackolik-mcp==0.1.1
 mackolik-mcp    # سرور MCP را روی stdio راه می‌اندازد
 ```
 
