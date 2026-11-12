@@ -1,5 +1,8 @@
 # mackolik-mcp 🇹🇷
 
+> ⚠️ **وضعیت: DEGRADED (2026-11-12)** — سایت mackolik.com در حال حاضر دسترسی خودکار را مسدود می‌کند (HTTP 403). همهٔ ابزارها تا زمان رفع مسدودیت، خطای واضح «blocked» برمی‌گردانند. برای وضعیت زنده، `mackolik_health` را بررسی کنید.
+
+
 mcp-name: io.github.mohammad-abbasi-sh/mackolik-mcp
 
 سرور MCP غیررسمی و **فقط-خواندنی** برای mackolik.com، برنامهٔ شمارهٔ ۱ نتایج زندهٔ ورزشی ترکیه (~۳۸ میلیون نصب) — نتایج زنده، نتایج نهایی، برنامهٔ بازی‌ها، جدول لیگ‌ها و جزئیات مسابقه برای فوتبال (و بسکتبال) در سراسر جهان، با اولویت لیگ‌های ترکیه.
@@ -15,7 +18,7 @@ mcp-name: io.github.mohammad-abbasi-sh/mackolik-mcp
   "mcpServers": {
     "mackolik": {
       "command": "uvx",
-      "args": ["mackolik-mcp==0.1.1"]
+      "args": ["mackolik-mcp==0.1.0"]
     }
   }
 }
@@ -59,9 +62,9 @@ mackolik.com به arsiv.mackolik.com هدایت می‌شود (جلوِ Akamai،
 ## نصب
 
 ```bash
-uvx mackolik-mcp==0.1.1        # اجرای مستقیم (نیازمند uv)
+uvx mackolik-mcp==0.1.0        # اجرای مستقیم (نیازمند uv)
 # یا
-pip install mackolik-mcp==0.1.1
+pip install mackolik-mcp==0.1.0
 mackolik-mcp    # سرور MCP را روی stdio راه می‌اندازد
 ```
 
@@ -83,7 +86,3 @@ python -m venv .venv && .venv/bin/pip install -e .
 ## مجوز
 
 MIT — ببینید [LICENSE](LICENSE).
-
----
-
-Built by [Mohammad Abbasi](https://github.com/mohammad-abbasi-sh) — [Almanibama](https://almanibama.ir) · [mabbasi.ir](https://mabbasi.ir)
