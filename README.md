@@ -1,5 +1,8 @@
 # mackolik-mcp 🇹🇷
 
+> ⚠️ **Status: DEGRADED (2026-11-12)** — mackolik.com currently blocks automated access (HTTP 403) from this environment. All tools return a clear "blocked" error until the site allows access again. Check `mackolik_health` for the live status.
+
+
 mcp-name: io.github.mohammad-abbasi-sh/mackolik-mcp
 
 Unofficial **read-only** MCP server for mackolik.com, Türkiye's #1 sports-scores app (~38M installs) — live scores, results, fixtures, league standings and match detail for football (and basketball) worldwide, with Turkish leagues first-class.
@@ -15,7 +18,7 @@ Add to your MCP client config (stdio):
   "mcpServers": {
     "mackolik": {
       "command": "uvx",
-      "args": ["mackolik-mcp==0.1.1"]
+      "args": ["mackolik-mcp==0.1.0"]
     }
   }
 }
@@ -59,9 +62,9 @@ mackolik.com redirects to arsiv.mackolik.com (Akamai-fronted, no bot wall). The 
 ## Install
 
 ```bash
-uvx mackolik-mcp==0.1.1        # run directly (needs uv)
+uvx mackolik-mcp==0.1.0        # run directly (needs uv)
 # or
-pip install mackolik-mcp==0.1.1
+pip install mackolik-mcp==0.1.0
 mackolik-mcp    # starts the MCP server on stdio
 ```
 
