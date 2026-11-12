@@ -1,5 +1,8 @@
 # mackolik-mcp 🇹🇷
 
+> ⚠️ **Durum: BOZUK (2026-11-12)** — mackolik.com şu anda otomatik erişimi engelliyor (HTTP 403). Tüm araçlar net bir "engellendi" hatası döndürür. Canlı durum için `mackolik_health` kullanın.
+
+
 mcp-name: io.github.mohammad-abbasi-sh/mackolik-mcp
 
 mackolik.com için resmi olmayan **salt okunur** MCP sunucusu — Türkiye'nin 1 numaralı canlı skor uygulaması (~38 milyon indirme): dünya genelinde futbol (ve basketbol) için canlı skorlar, sonuçlar, fikstürler, puan durumları ve maç detayları; Türkiye ligleri öncelikli.
@@ -15,7 +18,7 @@ MCP istemci yapılandırmanıza ekleyin (stdio):
   "mcpServers": {
     "mackolik": {
       "command": "uvx",
-      "args": ["mackolik-mcp==0.1.1"]
+      "args": ["mackolik-mcp==0.1.0"]
     }
   }
 }
@@ -59,9 +62,9 @@ mackolik.com, arsiv.mackolik.com'a yönlendirir (Akamai ön yüzü, bot duvarı 
 ## Kurulum
 
 ```bash
-uvx mackolik-mcp==0.1.1        # doğrudan çalıştır (uv gerekir)
+uvx mackolik-mcp==0.1.0        # doğrudan çalıştır (uv gerekir)
 # veya
-pip install mackolik-mcp==0.1.1
+pip install mackolik-mcp==0.1.0
 mackolik-mcp    # MCP sunucusunu stdio üzerinde başlatır
 ```
 
@@ -83,7 +86,3 @@ python -m venv .venv && .venv/bin/pip install -e .
 ## Lisans
 
 MIT — bkz. [LICENSE](LICENSE).
-
----
-
-Built by [Mohammad Abbasi](https://github.com/mohammad-abbasi-sh) — [Almanibama](https://almanibama.ir) · [mabbasi.ir](https://mabbasi.ir)
