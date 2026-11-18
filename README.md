@@ -85,7 +85,7 @@ Offline tests run on recorded fixtures (real feed responses from 2026-11-07); li
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+[PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0/) — see [LICENSE](LICENSE).
 
 ---
 

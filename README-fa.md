@@ -85,4 +85,4 @@ python -m venv .venv && .venv/bin/pip install -e .
 
 ## مجوز
 
-MIT — ببینید [LICENSE](LICENSE).
+[PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0/) — ببینید [LICENSE](LICENSE).
